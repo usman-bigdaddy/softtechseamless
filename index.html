@@ -59,7 +59,83 @@
       href="https://bootstrapmade.com/content/demo/BizLand/assets/css/main.css"
       rel="stylesheet"
     />
+    <style>
+      .project-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        transition: transform 0.3s;
+        aspect-ratio: 4 / 3; /* Keeps a uniform aspect ratio */
+      }
 
+      .project-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the image fills the space without distortion */
+        transition: transform 0.3s;
+      }
+
+      .project-card:hover img {
+        transform: scale(1.1);
+      }
+
+      .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .project-card:hover .project-overlay {
+        opacity: 1;
+      }
+
+      .project-title {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        color: #fff; /* Set to black or blue */
+        font-size: 1.25rem;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: adds shadow for better readability */
+      }
+
+      /* Optional: change the color to black or blue */
+      .project-title.black {
+        color: #000; /* Black text */
+        text-shadow: none; /* Remove shadow for better clarity on light backgrounds */
+      }
+
+      .project-title.blue {
+        color: #007bff; /* Blue text */
+        text-shadow: none; /* Remove shadow */
+      }
+
+      .overlay-btn {
+        padding: 10px 20px;
+        background-color: #fff;
+        border: none;
+        color: #333;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .overlay-btn:hover {
+        background-color: #007bff;
+        color: #fff;
+      }
+    </style>
     <!-- =======================================================
   * Template Name: BizLand
   * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
@@ -470,147 +546,68 @@
         </div>
         <!-- End Section Title -->
 
-        <div class="container">
-          <div
-            class="isotope-layout"
-            data-default-filter="*"
-            data-layout="masonry"
-            data-sort="original-order"
-          >
-            <ul
-              class="portfolio-filters isotope-filters"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-web">Web</li>
-              <li data-filter=".filter-mobile">Mobile</li>
-              <li data-filter=".filter-training">Training</li>
-            </ul>
-            <!-- End Portfolio Filters -->
-
-            <div
-              class="row gy-4 isotope-container"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web"
-              >
-                <img
-                  style="height: 350px"
-                  src="img/markinz-fitness.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-info">
-                  <h4>Markinz Fitness</h4>
-                  <p>Lorem ipsum, dolor sit</p>
+        <div class="container my-5">
+          <div class="row g-4">
+            <!-- Project 1 -->
+            <div class="col-md-4">
+              <div class="project-card">
+                <img src="img/markinz-fitness.jpg" alt="Project 1" />
+                <div class="project-overlay">
                   <a
-                    href="img/markinz-fitness.jpg"
-                    title="App 1"
-                    data-gallery="portfolio-gallery-app"
-                    class="glightbox preview-link"
-                    ><i class="bi bi-zoom-in"></i
-                  ></a>
-                  <a
-                    href="https://bootstrapmade.com/content/demo/BizLand/portfolio-details.html"
-                    title="More Details"
-                    class="details-link"
-                    ><i class="bi bi-link-45deg"></i
-                  ></a>
+                    href="https://markin-admin-main.onrender.com/"
+                    target="_blank"
+                    class="overlay-btn"
+                    >View Project</a
+                  >
                 </div>
+                <div class="project-title black">Markinz Fitness</div>
               </div>
-              <!-- End Portfolio Item -->
-
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web"
-              >
-                <img
-                  style="height: 250px"
-                  src="img/ecitibiz.png"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-info">
-                  <h4>Product 1</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a
-                    href="img/ecitibiz.png"
-                    title="Product 1"
-                    data-gallery="portfolio-gallery-product"
-                    class="glightbox preview-link"
-                    ><i class="bi bi-zoom-in"></i
-                  ></a>
-                  <a
-                    href="https://bootstrapmade.com/content/demo/BizLand/portfolio-details.html"
-                    title="More Details"
-                    class="details-link"
-                    ><i class="bi bi-link-45deg"></i
-                  ></a>
-                </div>
-              </div>
-              <!-- End Portfolio Item -->
-
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mobile"
-              >
-                <img
-                  style="height: 350px"
-                  src="https://bootstrapmade.com/content/demo/BizLand/assets/img/masonry-portfolio/masonry-portfolio-1.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-info">
-                  <h4>Product 1</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a
-                    href="https://bootstrapmade.com/content/demo/BizLand/assets/img/masonry-portfolio/masonry-portfolio-2.jpg"
-                    title="Product 1"
-                    data-gallery="portfolio-gallery-product"
-                    class="glightbox preview-link"
-                    ><i class="bi bi-zoom-in"></i
-                  ></a>
-                  <a
-                    href="https://bootstrapmade.com/content/demo/BizLand/portfolio-details.html"
-                    title="More Details"
-                    class="details-link"
-                    ><i class="bi bi-link-45deg"></i
-                  ></a>
-                </div>
-              </div>
-              <!-- End Portfolio Item -->
-
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-training"
-              >
-                <img
-                  style="height: 350px"
-                  src="https://bootstrapmade.com/content/demo/BizLand/assets/img/masonry-portfolio/masonry-portfolio-3.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-info">
-                  <h4>Branding 1</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a
-                    href="https://bootstrapmade.com/content/demo/BizLand/assets/img/masonry-portfolio/masonry-portfolio-3.jpg"
-                    title="Branding 1"
-                    data-gallery="portfolio-gallery-branding"
-                    class="glightbox preview-link"
-                    ><i class="bi bi-zoom-in"></i
-                  ></a>
-                  <a
-                    href="https://bootstrapmade.com/content/demo/BizLand/portfolio-details.html"
-                    title="More Details"
-                    class="details-link"
-                    ><i class="bi bi-link-45deg"></i
-                  ></a>
-                </div>
-              </div>
-              <!-- End Portfolio Item -->
             </div>
-            <!-- End Portfolio Container -->
+            <!-- Project 2 -->
+            <div class="col-md-4">
+              <div class="project-card">
+                <img src="img/ecitibiz.png" alt="Project 2" />
+                <div class="project-overlay">
+                  <a
+                    href="https://ecitibiz.interior.gov.ng/"
+                    target="_blank"
+                    class="overlay-btn"
+                    >View Project</a
+                  >
+                </div>
+                <div class="project-title black">e-citibiz</div>
+              </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="col-md-4">
+              <div class="project-card">
+                <img src="img/olivia-university.jpg" alt="Project 3" />
+                <div class="project-overlay">
+                  <a
+                    href="https://oliviauniversity.edu.bi/"
+                    target="_blank"
+                    class="overlay-btn"
+                    >View Project</a
+                  >
+                </div>
+                <div class="project-title black">Olivia University</div>
+              </div>
+            </div>
+            <!-- Project 4 -->
+            <div class="col-md-4">
+              <div class="project-card">
+                <img src="img/baba-ahmed.png" alt="Project 3" />
+                <div class="project-overlay">
+                  <a
+                    href="https://babaahmeduniversity.edu.ng/"
+                    target="_blank"
+                    class="overlay-btn"
+                    >View Project</a
+                  >
+                </div>
+                <div class="project-title black">Baba-Ahmed University</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
